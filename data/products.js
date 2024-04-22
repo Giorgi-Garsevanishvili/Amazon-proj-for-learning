@@ -656,5 +656,20 @@ const products = [
       "apparel",
       "mens"
     ]
+  }, {
+    id: "newonesomething",
+    image: "images/products/umbrella.jpg",
+    name: "brand new umbrella 2 size`s",
+    rating: {
+      stars: 3.5,
+      count: 234
+    },
+    priceCents: 1500,
+    keywords: [
+      "sweaters",
+      "hoodies",
+      "apparel",
+      "mens"
+    ]
   }
 ];
