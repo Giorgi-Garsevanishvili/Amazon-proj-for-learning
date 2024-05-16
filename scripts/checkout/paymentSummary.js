@@ -38,27 +38,27 @@ import { formatCurency } from "../utils/money.js";
 
     <div class="payment-summary-row">
       <div class="js-item-cart">Items (${cartQuantity}):</div>
-      <div class="payment-summary-money">${formatCurency(productPriceCents)}</div>
+      <div class="payment-summary-money">$${formatCurency(productPriceCents)}</div>
     </div>
 
     <div class="payment-summary-row">
       <div>Shipping &amp; handling:</div>
-      <div class="payment-summary-money">${formatCurency(ShippingPriceCents)}</div>
+      <div class="payment-summary-money js-payment-summary-shipping">$${formatCurency(ShippingPriceCents)}</div>
     </div>
 
     <div class="payment-summary-row subtotal-row">
       <div>Total before tax:</div>
-      <div class="payment-summary-money">${formatCurency(totalBeforeTaxCents)}</div>
+      <div class="payment-summary-money">$${formatCurency(totalBeforeTaxCents)}</div>
     </div>
 
     <div class="payment-summary-row">
       <div>Estimated tax (10%):</div>
-      <div class="payment-summary-money">${formatCurency(taxCents)}</div>
+      <div class="payment-summary-money">$${formatCurency(taxCents)}</div>
     </div>
 
     <div class="payment-summary-row total-row">
       <div>Order total:</div>
-      <div class="payment-summary-money">${formatCurency(totalCents)}</div>
+      <div class="payment-summary-money js-payment-summary-total">$${formatCurency(totalCents)}</div>
     </div>
 
     <button class="place-order-button button-primary">
