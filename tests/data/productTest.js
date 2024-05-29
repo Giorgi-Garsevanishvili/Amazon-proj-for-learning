@@ -28,4 +28,13 @@ describe('test suite: Products', () => {
     expect(product.name).toEqual('Intermediate Size Basketball');
     expect(product.getPrice()).toEqual('$20.95');
   });
+
+  it('gets Stars URL', () => {
+    expect(product.getStarsUrl()).toEqual('images/ratings/rating-40.png');
+  });
+  
+  it('extra info HTML', () => {
+    expect(product.extraInfoHTML()).toEqual('');
+  });
 });
+
