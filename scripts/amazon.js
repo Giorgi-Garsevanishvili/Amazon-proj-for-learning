@@ -1,9 +1,13 @@
 import { cart } from '../data/cart-class.js';
-import { products } from '../data/products.js';
+import { products, loadProducts } from '../data/products.js';
 
+
+loadProducts(renderProductsGrid)
+
+function renderProductsGrid() {
 
 updateCartQuantity();
-
+  
 let productsHTML = '';
 
 products.forEach((product) => {
@@ -98,3 +102,4 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
       updateCartQuantityVisual(productId);
       });
   });
+}
