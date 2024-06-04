@@ -37,7 +37,7 @@ class Cart {
   }
 
   saveToStorage (){
-    localStorage.setItem(this.localStorageKey, JSON.stringify(this.cartItems));
+    localStorage.setItem(this.#localStorageKey, JSON.stringify(this.cartItems));
   }
 
 
@@ -72,7 +72,7 @@ class Cart {
       }
     });
   
-    cart = newCart;
+    cart.cartItems = newCart;
     this.saveToStorage();
   }
 
