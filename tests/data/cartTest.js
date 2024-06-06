@@ -1,6 +1,15 @@
 import { cart } from "../../data/cart-class.js";
 
 describe('test suite: addToCart', () => {
+
+  let quantitySelectorMock;
+
+  beforeEach(() => {
+    // Create a mock for the quantity selector
+    quantitySelectorMock = jasmine.createSpyObj('HTMLInputElement', ['value']);
+    quantitySelectorMock.value = '1'; // Mock the value as 1
+    spyOn(document, 'querySelector').and.returnValue(quantitySelectorMock);
+  });
   
  it('adds an existing product to the cart', () => {
   spyOn(localStorage, 'setItem');

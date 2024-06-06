@@ -42,26 +42,31 @@ class Cart {
 
 
   addToCart(productId) {
-      let matchingitem;
-    
-      this.cartItems.forEach((cartItem) => {
-        if(productId === cartItem.productId){
-          matchingitem = cartItem;
-        }
-      });
-
-      if (matchingitem){
-        matchingitem.quantity += 1;
-      } else {
-        this.cartItems.push({
-          productId: productId,
-          quantity: 1,
-          deliveryOptionsId : '1'
-        });
+    let matchingitem;
+  
+    this.cartItems.forEach((cartItem) => {
+      if(productId === cartItem.productId){
+        matchingitem = cartItem;
       }
+    });
 
-      this.saveToStorage();
-  }
+    const quantitySelector = document.querySelector(`.js-quantity-selector-${productId}`);
+
+    const quantity = Number(quantitySelector.value);
+
+    if (matchingitem){
+      matchingitem.quantity += quantity;
+    } else {
+      this.cartItems.push({
+        productId: productId,
+        quantity: quantity,
+        deliveryOptionsId : '1'
+      });
+    }
+  
+    this.saveToStorage();
+    
+}
 
   removeFromCart(productId){
     const newCart = [];
