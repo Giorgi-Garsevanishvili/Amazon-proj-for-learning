@@ -6,19 +6,37 @@ import '../data/cart-class.js';
 import '../data/car.js';
 import { loadCart } from "../data/cart.js";
 
-Promise.all([
-  loadProductsFetch(),
-  new Promise((resolve) => {
-    loadCart(() => {
-      resolve();
-    });
-  })
+async function loadPage () {
+  await loadProductsFetch();
 
-]).then(() => {
-  renderCheckoutHeader();
-  renderOrderSummary();
-  renderPaymentSummary();
-});
+  await new Promise((resolve) => {
+        loadCart(() => {
+          resolve();
+        });
+      })
+
+      renderCheckoutHeader();
+      renderOrderSummary();
+      renderPaymentSummary();
+}
+
+loadPage()
+
+
+
+// Promise.all([
+//   loadProductsFetch(),
+//   new Promise((resolve) => {
+//     loadCart(() => {
+//       resolve();
+//     });
+//   })
+
+// ]).then(() => {
+//   renderCheckoutHeader();
+//   renderOrderSummary();
+//   renderPaymentSummary();
+// });
 
 
 /*
